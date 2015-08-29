@@ -1,0 +1,15 @@
+[package]
+name = "tempel"
+version = "0.1.0"
+description = "A CLI app for tempel.blankon.in."
+authors = ["Dhi Aurrahman <diorahman@rockybars.com>"]
+keyword = ["tempel", "blankon"]
+readme = "README.md"
+license = "MIT"
+
+[[bin]]
+name = "tempel"
+path = "src/main.rs"
+
+[dependencies]
+hyper = "0.6.11"
