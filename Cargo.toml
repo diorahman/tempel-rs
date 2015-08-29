@@ -2,6 +2,7 @@
 name = "tempel"
 version = "0.1.0"
 description = "A CLI app for tempel.blankon.in."
+repository = "https://github.com/diorahman/tempel-rs.git"
 authors = ["Dhi Aurrahman <diorahman@rockybars.com>"]
 keyword = ["tempel", "blankon"]
 readme = "README.md"
