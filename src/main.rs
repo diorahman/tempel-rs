@@ -1,12 +1,14 @@
 #![deny(warnings)]
 extern crate hyper;
+extern crate url;
 
 use std::fs::File;
 use std::path::Path;
 use std::error::Error;
 use std::io::prelude::*;
-
 use std::env;
+
+use url::percent_encoding::{percent_encode, FORM_URLENCODED_ENCODE_SET};
 use hyper::Client;
 use hyper::header::Location;
 use hyper::client::RedirectPolicy;
@@ -31,9 +33,9 @@ fn main() {
     Err(why) => panic!("{}", Error::description(&why)),
     Ok(_) => print!(""),
   };
-
-  let mut body = String::from("language=bash&content=");
-  body = body + &s;
+  
+  let content = percent_encode((&s).as_bytes(), FORM_URLENCODED_ENCODE_SET);
+  let body = String::from("language=bash&content=") + &content;
   let mut client = Client::new();
   client.set_redirect_policy(RedirectPolicy::FollowNone);
   let res = client.post("http://tempel.blankon.in")

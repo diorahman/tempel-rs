@@ -1,10 +1,10 @@
 [package]
 name = "tempel"
-version = "0.1.0"
+version = "0.1.1"
 description = "A CLI app for tempel.blankon.in."
 repository = "https://github.com/diorahman/tempel-rs.git"
 authors = ["Dhi Aurrahman <diorahman@rockybars.com>"]
-keyword = ["tempel", "blankon"]
+keywords = ["tempel", "blankon"]
 readme = "README.md"
 license = "MIT"
 
@@ -14,3 +14,4 @@ path = "src/main.rs"
 
 [dependencies]
 hyper = "0.6.11"
+url = "0.2.37"
